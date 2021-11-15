@@ -8,6 +8,7 @@ For this project we plan to make a system which can show rooms available for hir
 ## <a name="MVP">MVP</a>
 Our MVP for this project would be that available rooms can be viewed.
 
+```
 As a guest,
 So I can hire a room,
 I would like to be able to view rooms online.
@@ -37,5 +38,5 @@ in order to show a description,
 I would like to be able to post a description of each space.
 
 
-
+```
 
