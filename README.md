@@ -19,6 +19,9 @@ Our MVP for this project would be that available rooms can be viewed and booked.
  ```
  To set up the appropriate tables, connect to the database in `psql` and run the SQL scripts in the `db/migrations` folder in the given order.
 
+ ### To set up the test database
+ Follow the same steps for creating the main database. Name it "makersbnb_test".
+
 # <a name="user stories">User stories</a>
 
 ```
