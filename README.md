@@ -1,20 +1,3 @@
-<<<<<<< HEAD
-# Makersbnb
-
-Project Set-Up
-
-run bundle init
-
-list gem dependencies : sinatra, sinatra-contrib, rspec, capybara, webrick
-
-run bundle install
-
-run rspec --init
-
-create config.ru file and an app.rb file
-=======
-
-
 # Makers B&B
 ### Authors: Kate Young, Courtney Stow, Mohammed Salah, Jacob Hanrahan 
  
@@ -72,5 +55,23 @@ I would like to approve or decline a booking request.
 
 
 ```
->>>>>>> 5a6fbed74642ada5e606ea6942a703159c167302
+
+
+# Makersbnb
+
+###Project Set-Up
+
+```
+
+run bundle init
+
+list gem dependencies : sinatra, sinatra-contrib, rspec, capybara, webrick
+
+run bundle install
+
+run rspec --init
+
+create config.ru file and app.rb 
+
+```
 
