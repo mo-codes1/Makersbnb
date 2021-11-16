@@ -10,6 +10,16 @@ For this project we plan to make a system which can show rooms available for hir
 ## <a name="MVP">MVP</a>
 Our MVP for this project would be that available rooms can be viewed and booked.
 
+### To set up the database
+ Connect to `psql` and create the `makersbnb` database:
+ ```
+ CREATE DATABASE makersbnb;
+ ```
+ To set up the appropriate tables, connect to the database in `psql` and run the SQL scripts in the `db/migrations` folder in the given order.
+
+ ### To set up a test database
+ Follow the same steps for creating the main database, but name the test database `makersbnb_test`.
+
 # <a name="user stories">User stories</a>
 
 ```
