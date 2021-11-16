@@ -55,7 +55,7 @@ I would like to approve or decline a booking request.
 
 
 ```
->>>>>>> 5a6fbed74642ada5e606ea6942a703159c167302
+
 ...
 # Makersbnb
 
@@ -69,7 +69,8 @@ run bundle install
 
 run rspec --init
 
-create config.ru file and an app.rb file
+create config.ru file and app.rb 
+
 =======
 ...
 
