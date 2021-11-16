@@ -12,7 +12,7 @@ class BnB < Sinatra::Base
   end
 
   get '/spaces' do
-    @rooms = Spaces.all
+    @spaces = Spaces.all
     erb(:spaces)
   end
 
