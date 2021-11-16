@@ -1,8 +1,12 @@
 <body style= 'background-color: #80ced6'>
 
 <div style='position:absolute; top: 50%; left:50%; transform:translate(-50%, -50%)'>
-<h1 style='font-size: 50px'> You are now viewing Room 1 </h1>
-
+<h1 style='font-size: 50px'> Viewing Available rooms! </h1>
+<ol>
+  <% @spaces.each do |room| %>
+    <li><a href="<%= room["name"] %>"><%= room["available"] %></a></li>
+  <% end %>
+</ol>
 <button style= 'padding:30px; width:550px'><a href="/"> Back to Homepage </button>
 </div>
 </body>
