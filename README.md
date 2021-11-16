@@ -59,7 +59,7 @@ I would like to approve or decline a booking request.
 
 # Makersbnb
 
-###Project Set-Up
+### Project Set-Up
 
 ```
 
