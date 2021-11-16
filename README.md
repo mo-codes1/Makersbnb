@@ -1,6 +1,6 @@
 # Makers B&B
 ### Authors: Kate Young, Courtney Stow, Mohammed Salah, Jacob Hanrahan 
- 
+ .
 | [Overview](#overview) | [MVP](#MVP) | [User Stories](#user_stories) | 
 
 
