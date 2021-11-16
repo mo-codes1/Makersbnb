@@ -6,13 +6,13 @@ class BnB < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
   end
-
+  
   get '/' do
     erb (:index)
   end
 
-  get '/space' do
-    @rooms = Space.all
+  get '/spaces' do
+    @spaces = Spaces.all
     erb(:spaces)
   end
 
