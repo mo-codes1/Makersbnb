@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/spaces'
 
 class BnB < Sinatra::Base
   configure :development do
@@ -11,6 +12,7 @@ class BnB < Sinatra::Base
   end
 
   get '/spaces' do
+    @rooms = Spaces.all
     erb(:spaces)
   end
 
