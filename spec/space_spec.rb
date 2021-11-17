@@ -12,6 +12,7 @@ describe Space do
   end
 
   describe '.book' do
+    pending
     it 'should set availability of spaces to false' do
       conn = PG.connect(dbname: 'makersbnb_test')
       space = Space.book(name: 'Windsor Castle') # here we are trying to access which booking button was clicked
