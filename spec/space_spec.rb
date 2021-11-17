@@ -11,12 +11,14 @@ describe Space do
     end
   end
 
-  describe '#book' do
+  describe '.book' do
     it 'should set availability of spaces to false' do
       conn = PG.connect(dbname: 'makersbnb_test')
-      spaces = Space.update
-      expect('Windsor Castle').to updated_with(false)
+      space = Space.book(name: 'Windsor Castle') # here we are trying to access which booking button was clicked
+      spaces = Space.all
+      expect(spaces).to include(# Windsor Castle available: false) #sudo code
     end    
   end
 
 end
+

@@ -15,6 +15,11 @@ class BnB < Sinatra::Base
     @spaces = Space.all
     erb(:spaces)
   end
+   
+  # post route here to send param name of hotel 
+  # to the database to change available status to false
+  # redirect to '/booked'
+  # space = Space.book(name: params[:name]) in app.rb ?
 
   get '/booked' do
 
