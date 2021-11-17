@@ -6,7 +6,7 @@ font-family: Permanent Marker, cursive; position:absolute; left: 03%'><a href="/
 <h1 style='font-size: 50px'> Viewing Available rooms! </h1>
 <ol>
   <% @spaces.each do |room| %>
-    <li><%= room %></li>
+    <li><%= room %>       <button type="button" class="btn btn-outline-success" data-bs-toggle="button" autocomplete="off">Request booking <a href="/booked"></button> </li>
   <% end %>
 </ol>
 <button style= 'padding:30px; width:550px'><a href="/"> Back to Homepage </button>
