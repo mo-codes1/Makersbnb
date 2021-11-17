@@ -4,6 +4,10 @@ font-family: Permanent Marker, cursive; position:absolute; left: 03%'>MakersBnB<
 
 <div style='position:absolute; top: 50%; left:50%; transform:translate(-50%, -50%)'>
 <h1 style='font-size: 50px'> Viewing Available rooms! </h1>
+<form action="/spaces" method="post">
+Room for list:<input type="text" name="space" placeholder="Space">
+<input type="submit" value="submit">
+</form>
 <ol>
   <% @spaces.each do |room| %>
     <li><%= room %><img src= https://www.gannett-cdn.com/-mm-/05b227ad5b8ad4e9dcb53af4f31d7fbdb7fa901b/c=0-64-2119-1259/local/-/media/USATODAY/USATODAY/2014/08/13/1407953244000-177513283.jpg alt="our bnb"

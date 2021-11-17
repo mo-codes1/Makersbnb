@@ -17,8 +17,12 @@ class BnB < Sinatra::Base
   end
 
   get '/booked' do
-
     erb(:booked)
+  end
+
+  post '/spaces' do
+    Space.create(params[:space])
+    redirect '/spaces'
   end
 
 
