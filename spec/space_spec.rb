@@ -25,6 +25,7 @@ describe Space do
     it 'creates a new space' do
     space = Space.create(name: 'The Hilton').first #what does .first do here?
     expect(space['name']).to eq 'The Hilton'
+    expect(space['available']).to eq 't'
     end
   end 
 
