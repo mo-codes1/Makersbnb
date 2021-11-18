@@ -11,7 +11,7 @@ font-family: Permanent Marker, cursive; position:absolute; left: 03%'>Room for l
 </form>
 <ol>
   <% @spaces.each do |room| %>
-    <li><%= room %><img src= https://www.gannett-cdn.com/-mm-/05b227ad5b8ad4e9dcb53af4f31d7fbdb7fa901b/c=0-64-2119-1259/local/-/media/USATODAY/USATODAY/2014/08/13/1407953244000-177513283.jpg alt="our bnb"
+    <li><%= room.name %><%= room.owner_name %><img src= https://www.gannett-cdn.com/-mm-/05b227ad5b8ad4e9dcb53af4f31d7fbdb7fa901b/c=0-64-2119-1259/local/-/media/USATODAY/USATODAY/2014/08/13/1407953244000-177513283.jpg alt="our bnb"
      style="height:100px; width:100px; border-radius:80px; top:10%"><button type="button" class="btn btn-primary btn-lg" data-bs-toggle="button" autocomplete="off"><a href="/booked">Request booking </button> </li>
   <% end %>
 </ol>
