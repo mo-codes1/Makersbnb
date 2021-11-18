@@ -28,6 +28,12 @@ class BnB < Sinatra::Base
     redirect '/spaces'
   end
 
+  post '/book_space' do
+    p "This is the params[:space_name] #{params[:space_name]}" # this works. returns the space name 
+    # here call the update Spaces method and pass in the returned space name e.g. Windsor Castle
+    redirect '/booked'
+  end
+
   get '/add_space' do
     erb(:list_a_space)
   end

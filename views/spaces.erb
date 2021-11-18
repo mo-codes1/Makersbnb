@@ -5,15 +5,16 @@ font-family: Permanent Marker, cursive; position:absolute; left: 03%'>MakersBnB<
 
 <div style='position:absolute; top: 50%; left:50%; transform:translate(-50%, -50%)'>
 <h1 style='font-size: 50px' > Viewing Available rooms! </h1>
-<form action="/spaces" method="post">
-<h3 style='font-family: Balsamiq Sans, cursive;
-font-family: Permanent Marker, cursive; position:absolute; left: 03%'>Room for list:</h3>
-</form>
 <ol>
   <% @spaces.each do |room| %>
     <fieldset id='<%=room.name%>'>
-    <li><%= room.name %><img src= https://www.gannett-cdn.com/-mm-/05b227ad5b8ad4e9dcb53af4f31d7fbdb7fa901b/c=0-64-2119-1259/local/-/media/USATODAY/USATODAY/2014/08/13/1407953244000-177513283.jpg alt="our bnb"
-     style="height:100px; width:100px; border-radius:80px; top:10%"><button type="button" name="book" class="btn btn-primary btn-lg" data-bs-toggle="button" autocomplete="off"><a href="/booked">Request booking </button> </li>
+    <li><%= room.name %>
+    <img src= https://www.gannett-cdn.com/-mm-/05b227ad5b8ad4e9dcb53af4f31d7fbdb7fa901b/c=0-64-2119-1259/local/-/media/USATODAY/USATODAY/2014/08/13/1407953244000-177513283.jpg alt="our bnb"
+     style="height:100px; width:100px; border-radius:80px; top:10%">
+    <form action="/book_space" method="post">
+    <input type="submit" id="book" name="book" value="Book Space">
+    <input type="hidden" id="space_name" name="space_name" value="<%= room.name %>" > 
+    </form> 
     </fieldset> 
  <% end %>
 </ol>
