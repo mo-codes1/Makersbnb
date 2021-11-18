@@ -4,6 +4,7 @@ require './lib/space'
 require './lib/owner'
 
 class BnB < Sinatra::Base
+  enable :sessions
   configure :development do
     register Sinatra::Reloader
   end
@@ -17,26 +18,19 @@ class BnB < Sinatra::Base
     erb(:spaces)
   end
 
-  get '/booked' do
-    erb(:booked)
-  end
 
   post '/spaces' do
-    p "This is the params #{params}"
-    p "This is the params[:space_name] #{params[:space_name]}"
-    Space.create(name: params[:space_name]) # might need to update this
+    Space.create(name: params[:space_name]) 
     redirect '/spaces'
   end
 
   post '/book_space' do
-    p "This is the params[:space_name] #{params[:space_name]}" # this works. returns the space name 
-    # here call the update Spaces method and pass in the returned space name e.g. Windsor Castle
-    connection = PG.connect(dbname: 'makersbnb')
-    connection.exec_params(
-    "UPDATE spaces SET available = 'f' WHERE name = $1",
-    [ params[:space_name] ]
-    )
+    Space.book(name: params[:space_name])
     redirect '/booked'
+  end
+
+  get '/booked' do
+    erb(:booked)
   end
 
   get '/add_space' do

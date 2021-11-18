@@ -17,12 +17,14 @@ describe Space do
   end
 
   describe '.book' do
-    it 'should set availability of spaces to false' do
+    it 'books a space' do
       space = Space.create(name: 'The Hilton')
-      persisted_data = PG.connect(dbname: 'makersbnb_test').query("SELECT * FROM spaces WHERE id = #{space.id};")
-      booked_space = Space.book(id: space.id)
-      expect(space.name).to eq 'The Hilton'
-      expect(space.available).to eq 'f'
+      updated_space = Space.book(name: space.name)
+      
+      expect(updated_space).to be_a Space
+      expect(updated_space.id).to eq space.id
+      expect(updated_space.name).to eq 'The Hilton'
+      expect(updated_space.available).to eq 'f'
     end    
   end
   

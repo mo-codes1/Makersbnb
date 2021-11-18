@@ -11,7 +11,7 @@ feature "Updating available status" do
         visit('/spaces')
         expect(page).to have_content "Windsor Castle"
         within_fieldset("Windsor Castle") do
-          click_on('book') #? 
+          click_on('book')
         end
         expect(page).to have_content "Room Requested"
     end
