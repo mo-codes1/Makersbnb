@@ -22,7 +22,9 @@ class BnB < Sinatra::Base
   end
 
   post '/spaces' do
-    Space.create(params[:space])
+    p "This is the params #{params}"
+    p "This is the params[:space_name] #{params[:space_name]}"
+    Space.create(name: params[:space_name]) # might need to update this
     redirect '/spaces'
   end
 
