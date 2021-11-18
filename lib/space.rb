@@ -17,9 +17,9 @@ class Space
       connection = PG.connect(dbname: "makersbnb")
     end
     result = connection.exec("SELECT * FROM spaces")
-    result.map { |space| } #update the rest of the app
+    result.map { |space|  #update the rest of the app
     Space.new(id: space["id"], name: space["name"], available: space["available"])
-
+    }
   end
 
 
@@ -29,6 +29,7 @@ class Space
     else
       connection = PG.connect(dbname: "makersbnb")
     end
-      connection.exec("INSERT INTO spaces (name, available) VALUES('#{name}', true) RETURNING id, name, available") 
+      result = connection.exec("INSERT INTO spaces (name, available) VALUES('#{name}', true) RETURNING id, name, available;") 
+      Space.new(id: result[0]['id'], name: result[0]['name'], available: result[0]['available'])
   end
 end
