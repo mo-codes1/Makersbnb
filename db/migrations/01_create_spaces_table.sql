@@ -1,1 +1,1 @@
-CREATE TABLE spaces(id SERIAL PRIMARY KEY, name VARCHAR(60), available BOOL);
+CREATE TABLE spaces(id SERIAL PRIMARY KEY, name VARCHAR(60), available BOOL,);

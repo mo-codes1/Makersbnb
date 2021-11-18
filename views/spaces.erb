@@ -1,13 +1,13 @@
 <body style= 'background-color: #80ced6'>
 <h2 style='font-family: Balsamiq Sans, cursive;
 font-family: Permanent Marker, cursive; position:absolute; left: 03%'>MakersBnB</h2>
+<h3><a href= '/add_space'> Click here to list a space</h3>
 
 <div style='position:absolute; top: 50%; left:50%; transform:translate(-50%, -50%)'>
 <h1 style='font-size: 50px' > Viewing Available rooms! </h1>
 <form action="/spaces" method="post">
 <h3 style='font-family: Balsamiq Sans, cursive;
-font-family: Permanent Marker, cursive; position:absolute; left: 03%'>Room for list:</h3><input type="text" name="space_name" placeholder="Enter new space name">
-<input type="submit" value="submit">
+font-family: Permanent Marker, cursive; position:absolute; left: 03%'>Room for list:</h3>
 </form>
 <ol>
   <% @spaces.each do |room| %>
