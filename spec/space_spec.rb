@@ -4,22 +4,21 @@ require 'pg'
 describe Space do 
   describe '.all' do 
     it 'it should retun a list of spaces from the database' do
-      conn = PG.connect(dbname: 'makersbnb_test')
+      connection = PG.connect(dbname: 'makersbnb_test')
       spaces = Space.all 
-      expect(spaces).to include('Windsor Castle')
-      expect(spaces).to include('Roka Rooms')
+      expect(spaces).to include("Windsor Castle")
+      expect(spaces).to include("Roka Rooms")
     end
   end
 
   describe '.book' do
-    pending
     it 'should set availability of spaces to false' do
-      conn = PG.connect(dbname: 'makersbnb_test')
+      connection = PG.connect(dbname: 'makersbnb_test')
       space = Space.book(name: 'Windsor Castle') # here we are trying to access which booking button was clicked
       spaces = Space.all
-      expect(spaces).to include(# Windsor Castle available: false) #sudo code
+      expect(spaces).to include # Windsor Castle available: false) #sudo code)
     end    
   end
-
 end
+
 
