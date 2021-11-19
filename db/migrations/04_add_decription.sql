@@ -1,1 +1,1 @@
-ALTER TABLE spaces ADD decription VARCHAR(500);
+ALTER TABLE spaces ADD description VARCHAR(500);
