@@ -27,7 +27,7 @@ class Space
   end
 
 
-  def self.create(name:, owner_name:, price:, description:) #??
+  def self.create(name:, owner_name:, price:, description:) #???
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: "makersbnb_test")
     else
