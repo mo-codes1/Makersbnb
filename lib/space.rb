@@ -2,13 +2,14 @@ require 'pg'
 
 class Space 
 
-  attr_reader :id, :name, :available, :owner_name # 
+  attr_reader :id, :name, :available, :owner_name, :space_name# 
 
   def initialize(id:, name:, available:, owner_name:) #
     @id = id
     @name = name
     @available = available
     @owner_name = owner_name
+    @space_name = space_name
     #
   end
 
@@ -25,7 +26,7 @@ class Space
   end
 
 
-  def self.create(name:, owner_name:) #??
+  def self.create(name:) #??
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: "makersbnb_test")
     else
@@ -35,7 +36,7 @@ class Space
       Space.new(id: result[0]['id'], name: result[0]['name'], available: result[0]['available'], owner_name: result[0]['owner_name'])
   end
 
-  def self.book(name:)
+  def self.book(name)
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: "makersbnb_test")
     else
