@@ -2,13 +2,14 @@ require 'pg'
 
 class Space 
 
-  attr_reader :id, :name, :available, :owner_name
+  attr_reader :id, :name, :available, :owner_name # 
 
-  def initialize(id:, name:, available:, owner_name:)
+  def initialize(id:, name:, available:, owner_name:) #
     @id = id
     @name = name
     @available = available
     @owner_name = owner_name
+    #
   end
 
   def self.all
@@ -18,13 +19,13 @@ class Space
       connection = PG.connect(dbname: "makersbnb")
     end
     result = connection.exec("SELECT * FROM spaces")
-    result.map { |space|  #update the rest of the app
-    Space.new(id: space["id"], name: space["name"], available: space["available"], owner_name: space['owner_name'])
+    result.map { |space|  
+    Space.new(id: space["id"], name: space["name"], available: space["available"], owner_name: space["owner_name"]) #
     }
   end
 
 
-  def self.create(name:) # add function: set available to true by default
+  def self.create(name:, owner_name:) #??
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: "makersbnb_test")
     else
