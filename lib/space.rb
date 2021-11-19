@@ -32,6 +32,6 @@ class Space
       connection = PG.connect(dbname: "makersbnb")
     end
       result = connection.exec("INSERT INTO spaces (name, available, owner_name) VALUES('#{name}', true, '#{owner_name}') RETURNING id, name, available, owner_name;") #
-      Space.new(id: result[0]['id'], name: result[0]['name'], available: result[0]['available'], owner_name: result[0]['available'])#
+      Space.new(id: result[0]['id'], name: result[0]['name'], available: result[0]['available'], owner_name: result[0]['owner_name'])#
   end
 end

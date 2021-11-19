@@ -1,21 +1,39 @@
-<body style= 'background-color: #80ced6'>
-<h2 style='font-family: Balsamiq Sans, cursive;
-font-family: Permanent Marker, cursive; position:absolute; left: 03%'>MakersBnB</h2>
-<h3><a href= '/add_space'> Click here to list a space</h3>
+<link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Permanent+Marker&display=swap" rel="stylesheet">
 
-<div style='position:absolute; top: 50%; left:50%; transform:translate(-50%, -50%)'>
-<h1 style='font-size: 50px' > Viewing Available rooms! </h1>
+
+
+
+<body style= 'background-color: #fa8072; font-family: Balsamiq Sans, cursive; color:white'>
+
+
+<p style='position:absolute; top: 5%; left:85%; color:white; text-decoration:none'><a href="/add_space" style= 'color:white; text-decoration: none'>Click here to list a space!</a></p>
+
+
+<h2 style='font-family: Balsamiq Sans, cursive;
+font-family: Permanent Marker, cursive; position:absolute; left: 03%; '>MakersBnB</h2>
+<h1 style='font-size: 50px; position:absolute; top: 5%; left:39%'>Available rooms!</h1>
+<h3 style='position:absolute; left: 3.5%; top: 18%'>Rooms for list:</h3>
+
+<div style='position:absolute; top: 50%; left:15%; transform:translate(-50%, -50%)'>
 <form action="/spaces" method="post">
-<h3 style='font-family: Balsamiq Sans, cursive;
-font-family: Permanent Marker, cursive; position:absolute; left: 03%'>Room for list:</h3>
+
 </form>
 <ol>
   <% @spaces.each do |room| %>
-    <li><%= room.name %><%= room.owner_name %><img src= https://www.gannett-cdn.com/-mm-/05b227ad5b8ad4e9dcb53af4f31d7fbdb7fa901b/c=0-64-2119-1259/local/-/media/USATODAY/USATODAY/2014/08/13/1407953244000-177513283.jpg alt="our bnb"
-     style="height:100px; width:100px; border-radius:80px; top:10%"><button type="button" class="btn btn-primary btn-lg" data-bs-toggle="button" autocomplete="off"><a href="/booked">Request booking </button> </li>
+    <li  style='padding:30px; ' ><%= room.name %> hosted by <%= room.owner_name %>
+    
+    <button type="button"  class="btn btn-primary btn-lg" style= 'position:absolute; left:350%; border-radius:100px; padding:10px;' data-bs-toggle="button" autocomplete="off"><a href="/booked" style='text-decoration:none; color:black; left:20%;'>Request booking </button></a> </li>
   <% end %>
 </ol>
-<button style= 'font-size: 30px; padding:30px; width:250px; font-family: Balsamiq Sans, cursive; border-radius: 80px; position:absolute;left:30%'><a href="/"> Back to Homepage </button>
 </div>
-</body>
 
+<button style= 'font-size: 15px; padding:15px; width:250px; font-family: Balsamiq Sans, cursive; border-radius: 80px; position:absolute;left:40%; top:90%;'><a  href="/" style = 'text-decoration:none'> Back to Homepage </button>
+
+
+
+</body>
