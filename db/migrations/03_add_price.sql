@@ -1,0 +1,1 @@
+ALTER TABLE spaces ADD price VARCHAR(60);

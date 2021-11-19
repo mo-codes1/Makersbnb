@@ -1,0 +1,1 @@
+ALTER TABLE spaces ADD decription VARCHAR(500);

@@ -25,9 +25,9 @@ font-family: Permanent Marker, cursive; position:absolute; left: 03%; '>MakersBn
 </form>
 <ol>
   <% @spaces.each do |room| %>
-    <li  style='padding:30px; ' ><%= room.name %> hosted by <%= room.owner_name %>
+    <li  style='padding:30px; ' ><%= room.name %> hosted by <%= room.owner_name %> £<%= room.price %> <%= room.description %>
     
-    <button type="button"  class="btn btn-primary btn-lg" style= 'position:absolute; left:350%; border-radius:100px; padding:10px;' data-bs-toggle="button" autocomplete="off"><a href="/booked" style='text-decoration:none; color:black; left:20%;'>Request booking </button></a> </li>
+    <button type="button"  class="btn btn-primary btn-lg" style= 'position:absolute; left:250%; border-radius:100px; padding:10px;' data-bs-toggle="button" autocomplete="off"><a href="/booked" style='text-decoration:none; color:black; left:20%;'>Request booking </button></a> </li>
   <% end %>
 </ol>
 </div>
