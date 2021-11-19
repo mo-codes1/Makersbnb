@@ -16,13 +16,15 @@ describe Space do
     end
   end
 
-  describe '#book' do
-    
-    it 'should set availability of spaces to false' do
-      pending
-      conn = PG.connect(dbname: 'makersbnb_test')
-      spaces = Space.update
-      expect('Windsor Castle').to updated_with(false) # this is sudo code
+  describe '.book' do
+    it 'books a space' do
+      space = Space.create(name: 'The Hilton')
+      updated_space = Space.book(name: space.name)
+      
+      expect(updated_space).to be_a Space
+      expect(updated_space.id).to eq space.id
+      expect(updated_space.name).to eq 'The Hilton'
+      expect(updated_space.available).to eq 'f'
     end    
   end
   
