@@ -4,7 +4,8 @@ require './lib/space'
 require './lib/owner'
 
 class BnB < Sinatra::Base
-  enable :sessions
+  enable :sessions unless test?
+    set :session_secret, "secret"
   configure :development do
     register Sinatra::Reloader
   end
@@ -26,10 +27,12 @@ class BnB < Sinatra::Base
 
   post '/book_space' do
     Space.book(name: params[:space_name])
+    session[:booked_space] = params[:space_name]
     redirect '/booked'
   end
 
   get '/booked' do
+    @booked_space = session[:booked_space]
     erb(:booked)
   end
 
