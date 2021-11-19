@@ -5,7 +5,7 @@ describe Space do
   describe '.all' do 
     it 'it should return a list of spaces from the database' do
       conn = PG.connect(dbname: 'makersbnb_test')
-      space = Space.create(name: 'Tudor Room')
+      space = Space.create(name: "Tudor Room", owner_name: "Jeff", price: "100", description: "Spacious")
       spaces = Space.all 
       expect(spaces.length).to eq 1
       expect(spaces.first).to be_a Space
@@ -18,7 +18,7 @@ describe Space do
 
   describe '.book' do
     it 'should set availability of spaces to false' do
-      space = Space.create(name: 'The Hilton')
+      space = Space.create(name: "The Hilton", owner_name: "Jeff", price: "100", description: "Spacious")
       persisted_data = PG.connect(dbname: 'makersbnb_test').query("SELECT * FROM spaces WHERE id = #{space.id};")
       booked_space = Space.book(id: space.id)
       expect(space.name).to eq 'The Hilton'
@@ -28,7 +28,7 @@ describe Space do
   
   describe '.create' do 
     it 'creates a new space' do
-    space = Space.create(name: 'The Hilton')
+    space = Space.create(name: "The Hilton", owner_name: "Jeff", price: "100", description: "Spacious")
     persisted_data = PG.connect(dbname: 'makersbnb_test').query("SELECT * FROM spaces WHERE id = #{space.id};")
     expect(space.name).to eq 'The Hilton'
     expect(space.available).to eq 't'
